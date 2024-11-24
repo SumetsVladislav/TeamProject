@@ -13,3 +13,8 @@ class User(IUser):
             "email": self.email,
         }
 
+    def new_method(self):
+        return "This is a new method"
+	
+
+# Зміна розробника для демонстрації stash
