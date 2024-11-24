@@ -15,5 +15,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(user_info["username"], "another_user")
         self.assertEqual(user_info["email"], "another@example.com")
 
+    def test_new_method():
+    	user = User()
+    	assert user.new_method() == "This is a new method"
 if __name__ == "__main__":
     unittest.main()
