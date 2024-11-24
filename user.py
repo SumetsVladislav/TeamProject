@@ -1,5 +1,15 @@
 from interfaces import IUser
 
 class User(IUser):
-    def get_user_info(self) -> dict:
-        return {"name": "Alice", "email": "alice@example.com"}
+    def __init__(self, user_id, username, email):
+        self.user_id = user_id
+        self.username = username
+        self.email = email
+
+    def get_user_info(self):
+        return {
+            "user_id": self.user_id,
+            "username": self.username,
+            "email": self.email,
+        }
+
