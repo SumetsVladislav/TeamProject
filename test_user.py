@@ -1,6 +1,10 @@
 import unittest
 from user import User
 
+class MockDependency:
+    def action(self):
+        return "Mocked Action"
+
 class TestUser(unittest.TestCase):
     def test_user_creation(self):
         user = User(1, "test_user", "test@example.com")
@@ -15,9 +19,14 @@ class TestUser(unittest.TestCase):
         self.assertEqual(user_info["username"], "another_user")
         self.assertEqual(user_info["email"], "another@example.com")
 
-    def test_new_method():
-    	user = User()
-    	assert user.new_method() == "This is a new method"
+    def test_dependency_injection(self):
+        mock_dependency = MockDependency()
+        user = User(1, "test_user", "test@example.com", dependency=mock_dependency)
+        self.assertEqual(user.do_something(), "Mocked Action")
+
+    def test_no_dependency(self):
+        user = User(1, "test_user", "test@example.com")
+        self.assertEqual(user.do_something(), "No dependency provided")
+
 if __name__ == "__main__":
     unittest.main()
-
