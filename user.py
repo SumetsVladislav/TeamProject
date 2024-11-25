@@ -19,4 +19,3 @@ class User(IUser):
             return self.dependency.action()
         else:
             return "No dependency provided"
-
