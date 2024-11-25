@@ -1,0 +1,13 @@
+diff --git a/user.py b/user.py
+index 60a9681..1308391 100644
+--- a/user.py
++++ b/user.py
+@@ -13,3 +13,8 @@ class User(IUser):
+             "email": self.email,
+         }
+ 
++    def new_method(self):
++        return "This is a new method"
++	
++
++# Зміна розробника для демонстрації stash
