@@ -1,5 +1,5 @@
 import unittest
-from user import User
+from user import User  # Імпортуємо клас User з файлу user.py
 
 class MockDependency:
     def action(self):
